@@ -16,11 +16,31 @@ module.exports = function(source, sourceMap) {
     }
 
     if (polyfills.length) {
+
         var inject = '\n/* injects from autopolyfiller-loader */\n';
 
+        var pfs = [];
+        var replacements = query.replacements || [];
+        var custom = query.custom || [];
+        if (custom.length) {
+            custom.forEach(function(polyfill) {
+                if (polyfills.indexOf(polyfill) === -1) {
+                    polyfills.push(polyfill);
+                }
+            });
+        }
+
         // append require()s with absoluted paths to neccessary polyfills
-        polyfills.forEach(function(polyfill) {
-            polyfill = polyfill.replace("Window.prototype.", "")
+        if (Object.keys(replacements).length) {
+            polyfills.forEach(function(polyfill) {
+                pfs.push(replacements[polyfill] ? replacements[polyfill] : polyfill.replace(/\./g, '/'));
+            });
+        } else {
+            pfs = polyfills;
+        }
+
+        pfs.forEach(function(polyfill) {
+            // polyfill = polyfill.replace(/\w+\.prototype\./, "");
             inject += 'require(' + JSON.stringify(require.resolve('polyfill-service/polyfills/' + polyfill + '/polyfill')) + ');';
             inject += '\n';
         });

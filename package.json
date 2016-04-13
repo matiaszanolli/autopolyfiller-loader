@@ -1,42 +1,44 @@
 {
-  "name": "autopolyfiller-loader",
-  "version": "0.3.4",
+  "name": "autopolyfiller-webpack",
+  "version": "0.4.0",
   "description": "Autopolyfiller loader for webpack",
   "keywords": [
     "webpack",
     "loader",
     "autopolyfiller"
   ],
-  "homepage": "https://github.com/deepsweet/autopolyfiller-loader",
+  "homepage": "https://github.com/matiaszanolli/autopolyfiller-loader",
   "repository": {
     "type": "git",
-    "url": "git://github.com/deepsweet/autopolyfiller-loader.git"
+    "url": "git://github.com/matiaszanolli/autopolyfiller-loader.git"
   },
   "author": {
-    "name": "Kir Belevich",
-    "email": "kir@soulshine.in",
-    "url": "https://github.com/deepsweet"
+    "name": "Matias Zanolli",
+    "email": "gtd.inf@gmail.com",
+    "url": "https://github.com/matiaszanolli"
   },
   "main": "index.js",
-  "files": ["index.js"],
+  "files": [
+    "index.js"
+  ],
   "peerDependencies": {
-    "webpack": "^1.4.3"
+    "webpack": "^1.12.15"
   },
   "dependencies": {
-    "autopolyfiller": "^1.6.0",
-    "loader-utils": "^0.2.4",
-    "polyfill-service": "1.3.0",
-    "source-map": "^0.1.39"
+    "autopolyfiller": "^1.6.1",
+    "loader-utils": "^0.2.14",
+    "polyfill-service": "^3.4.1",
+    "source-map": "^0.5.3"
   },
   "devDependencies": {
-    "eslint": "^0.8.2",
-    "jscs": "^1.6.2"
+    "eslint": "^2.7.0",
+    "jscs": "^2.11.0"
   },
   "scripts": {
     "test": "eslint index.js && jscs index.js"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4.0.0"
   },
   "license": "WTFPL"
 }

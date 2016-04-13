@@ -1,17 +1,14 @@
 ## [Autopolyfiller](https://github.com/azproduction/autopolyfiller) loader for [webpack](https://webpack.github.io/)
 
-[![npm](http://img.shields.io/npm/v/autopolyfiller-loader.svg?style=flat-square)](https://www.npmjs.org/package/autopolyfiller-loader)
-[![travis](http://img.shields.io/travis/deepsweet/autopolyfiller-loader.svg?style=flat-square)](https://travis-ci.org/deepsweet/autopolyfiller-loader)
-[![climate](http://img.shields.io/codeclimate/github/deepsweet/autopolyfiller-loader.svg?style=flat-square)](https://codeclimate.com/github/deepsweet/autopolyfiller-loader/code)
-[![deps](http://img.shields.io/david/deepsweet/autopolyfiller-loader.svg?style=flat-square)](https://david-dm.org/deepsweet/autopolyfiller-loader)
-[![gratipay](http://img.shields.io/gratipay/deepsweet.svg?style=flat-square)](https://gratipay.com/deepsweet/)
+
+Heavily based on [deepsweet/autopolyfiller-loader](https://github.com/deepsweet/autopolyfiller-loader), but updated to work with newer versions of webpack.
 
 > This is like [Autoprefixer](https://github.com/ai/autoprefixer), but for JavaScript polyfills. It scans your code and applies only required polyfills.
 
 ### Install
 
 ```sh
-$ npm i -S autopolyfiller-loader
+$ npm i -S autopolyfiller-webpack
 ```
 
 ### Usage
@@ -21,7 +18,7 @@ module: {
     postLoaders: [ {
         test: /\.js$/,
         exclude: /\/(node_modules|bower_components)\//,
-        loader: 'autopolyfiller',
+        loader: 'autopolyfiller-webpack',
         query: { browsers: [ 'last 2 versions', 'ie >= 9' ] }
     } ]
 }
